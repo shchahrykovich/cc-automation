@@ -1,0 +1,10 @@
+flowchart TD
+    A([Start]) --> B[For each screenshot in the folder 'screenshots']
+    B --> C[Read the screenshot file]
+    C --> D[Analyze file and find artefacts]
+    D --> E{Has UI bugs?}
+    E -- Yes --> F[Move the screenshot to the 'ui-bugs' folder]
+    F --> G[Create text file with the screenshot file name and add in the content bug description]
+    E -- No --> H{Has non English texts?}
+    H -- Yes --> I[Move the screenshot to the 'translation-bugs' folder]
+    I --> J[Create text file with the screenshot file name and add in the content translation bug description]
